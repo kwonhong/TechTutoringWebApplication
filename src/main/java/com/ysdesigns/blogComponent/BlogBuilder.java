@@ -16,7 +16,7 @@ public class BlogBuilder {
     //TODO parseContent the given message.
     public List<BlogComponent> parseContent(String content) {
 
-        List<BlogComponent> blogComponents = new ArrayList<>();
+        List<BlogComponent> blogComponents = new ArrayList<BlogComponent>();
         BlogComponent blogComponent;
         BlogComponentType blogComponentType;
         String remainingContent = content;
