@@ -25,6 +25,7 @@ public class NewBlogController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String init(ModelMap model) {
+        System.out.println("HDALSKFJALKSJDFLAKSJDLKFJ");
         return "newBlogCreate";
 
     }
