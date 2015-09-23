@@ -1,24 +1,56 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+    <%-- Navigation Header--%>
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">TechTutoringService Admin</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
     </div>
 
+    <%-- Top Part Navigation--%>
     <jsp:include page="navigation/adminTopMenuNavigation.jsp"/>
 
-    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-            <li>
-                <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-            </li>
+    <%--Side Bar Navigation Starts--%>
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
 
-            <li class="active">
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Create New Blog</a>
-            </li>
-        </ul>
+                <%--Searching Box--%>
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </li>
+
+                <%-- Dashboard Button--%>
+                <li>
+                    <a href="<c:url value='${urlHelper.getDashBoardUrlPath()}' />"> DashBoard</a>
+                </li>
+
+                <li>
+                    <a href="#"> Manage Blog </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<c:url value='${urlHelper.getEditBlogUrlPath()}' />"> Create Blog</a>
+                        </li>
+                        <li>
+                            <a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> Find Blog</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
     </div>
-    <!-- /.navbar-collapse -->
+
 </nav>

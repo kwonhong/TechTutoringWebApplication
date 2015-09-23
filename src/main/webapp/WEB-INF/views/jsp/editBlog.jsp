@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <link href="<c:url value="/resources/core/css/sb-admin.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/core/css/sb-admin-2.css" />" rel="stylesheet">
     <script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 
@@ -15,6 +15,10 @@
 
 <body>
 <div id="wrapper">
+
+    <c:if test="${empty urlHelper}">
+        var1 is empty or null.
+    </c:if>
 
     <%-- Navigatioin Side bar --%>
     <%@ include file="navigation/adminNavigation.jsp" %>
