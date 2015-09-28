@@ -19,13 +19,15 @@ import java.util.List;
 @Controller
 public class BlogFindController {
 
+    private static final int MAX_LENGTH = 30;
+
     @Autowired
     private BlogService blogService;
 
     @Autowired
     private UrlHelper urlHelper;
 
-    @RequestMapping(value = RequestMappingDefinitions.BLOG_FIND_URL_PATH, method = RequestMethod.GET)
+    @RequestMapping(value = RequestMappingDefinitions.BLOG_FIND_URL_PATH, method = {RequestMethod.GET, RequestMethod.POST})
     public String getAllBlogLists(ModelMap model) {
 
         // Url Helper Attribute set for any jsp
@@ -33,9 +35,24 @@ public class BlogFindController {
 
         // Retrieving blogs from the database;
         List<Blog> blogList = blogService.findAllBlog();
+        blogList.stream().forEach(blogService -> {
+
+            String contents = blogService.getContents();
+            String title = blogService.getTitle();
+            String subTitle = blogService.getSubTitle();
+
+            contents = (contents.length() > MAX_LENGTH)? contents.substring(0, 30) : contents;
+            title = (title.length() > MAX_LENGTH)? title.substring(0, 30) : title;
+            subTitle = (subTitle.length() > MAX_LENGTH)? subTitle.substring(0, 30) : subTitle;
+
+            blogService.setContents(contents);
+            blogService.setTitle(title);
+            blogService.setSubTitle(subTitle);
+        });
+
         model.addAttribute("blogList", blogList);
 
-        return RequestMappingDefinitions.getViewName(RequestMappingDefinitions.BLOG_FIND_URL_PATH);
+        return RequestMappingDefinitions.BLOG_FIND_URL_PATH;
     }
 
 }

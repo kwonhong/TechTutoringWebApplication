@@ -14,5 +14,5 @@ public interface BlogDao {
     void deleteBlog(int blogID);
     Blog findBlogByID(int blogID);
     void updateBlog(Blog blog);
-
+    void saveOrUpdateBlog(Blog blog);
 }

@@ -44,4 +44,9 @@ public class BlogServiceImpl implements BlogService {
     public void updateBlog(Blog blog){
         dao.updateBlog(blog);
     }
+
+    @Override
+    public void saveOrUpdate(Blog blog) {
+        dao.saveOrUpdateBlog(blog);
+    }
 }

@@ -29,8 +29,10 @@ public class DashboardController {
     @RequestMapping(value = RequestMappingDefinitions.INDEX_URL_PATH, method = RequestMethod.GET)
     public String init(ModelMap model) {
         model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
-        return RequestMappingDefinitions.getViewName(RequestMappingDefinitions.DASHBOARD_URL_PATH);
+        return RequestMappingDefinitions.DASHBOARD_URL_PATH;
+//        return "ajaxTutorial";
     }
+
 
     @RequestMapping(value = RequestMappingDefinitions.DASHBOARD_URL_PATH, method = RequestMethod.GET)
     public String getAllBlogLists(ModelMap model) {

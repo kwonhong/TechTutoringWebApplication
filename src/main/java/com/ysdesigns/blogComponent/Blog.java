@@ -1,6 +1,8 @@
 package com.ysdesigns.blogComponent;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +19,21 @@ import java.util.Date;
 @Entity
 @Table(name="BLOG")
 public class Blog implements Comparable<Blog>{
+
+    @Ignore
+    public enum blogAttributes {
+        BLOG_ID("blogID"),
+        TITLE("title"),
+        SUB_TITLE("subTitle"),
+        CONTENTS("contents"),
+        CREATION_DATE("creation_date");
+
+        @Getter
+        private String attributeName;
+        blogAttributes(String attributeName) {
+            this.attributeName = attributeName;
+        }
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

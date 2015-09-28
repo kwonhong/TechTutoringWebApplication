@@ -1,0 +1,20 @@
+{
+  "name": "ysdesign",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kwonhong/TechTutoringWebApplication",
+  "authors": [
+    "James"
+  ],
+  "description": "bower",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

@@ -41,7 +41,7 @@
                     <a href="#"> Manage Blog </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<c:url value='${urlHelper.getEditBlogUrlPath()}' />"> Create Blog</a>
+                            <a href="<c:url value='${urlHelper.getCreateBlogUrlPath()}' />"> Create Blog</a>
                         </li>
                         <li>
                             <a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> Find Blog</a>
