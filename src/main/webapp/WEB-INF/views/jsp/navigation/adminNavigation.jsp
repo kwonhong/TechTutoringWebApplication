@@ -49,6 +49,10 @@
                     </ul>
                 </li>
 
+                <li>
+                     <a href="<c:url value='${urlHelper.getLoginUrlPath()}' />"> Login</a>
+                </li>
+
             </ul>
         </div>
     </div>

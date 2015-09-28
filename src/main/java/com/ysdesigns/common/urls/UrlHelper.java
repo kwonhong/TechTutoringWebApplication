@@ -24,4 +24,9 @@ public final class UrlHelper {
     public static String getFindBlogUrlPath() {
         return RequestMappingDefinitions.BLOG_FIND_URL_PATH;
     }
+
+    public static String getLoginUrlPath() {
+        return RequestMappingDefinitions.LOGIN_URL_PATH;
+    }
+
 }

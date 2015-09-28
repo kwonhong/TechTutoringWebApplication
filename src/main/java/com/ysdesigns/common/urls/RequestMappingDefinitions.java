@@ -7,6 +7,9 @@ public final class RequestMappingDefinitions {
     public static final String DASHBOARD_URL_PATH = "/dashBoard.html";
     public static final String BLOG_EDIT_URL_PATH = "/editBlog.html";
     public static final String BLOG_FIND_URL_PATH = "/blogFind.html";
+    public static final String LOGIN_URL_PATH = "/login.html";
+
+
 
     public static String getViewName(String pathName) {
         return pathName.replace(".jsp", "").replace(".html", "");
