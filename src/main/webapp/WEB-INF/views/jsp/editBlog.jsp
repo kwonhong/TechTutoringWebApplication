@@ -16,10 +16,6 @@
 <body>
 <div id="wrapper">
 
-    <c:if test="${empty urlHelper}">
-        var1 is empty or null.
-    </c:if>
-
     <%-- Navigatioin Side bar --%>
     <%@ include file="navigation/adminNavigation.jsp" %>
 
