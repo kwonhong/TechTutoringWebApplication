@@ -35,14 +35,16 @@ public class BlogEditController {
     @Autowired
     private UrlHelper urlHelper;
 
+
     @RequestMapping(value = RequestMappingDefinitions.BLOG_EDIT_URL_PATH + "/{blogID}", method = {RequestMethod.GET})
-    public String eidtBlogPage(
+    public String editBlogPage(
             @PathVariable Integer blogID,
             ModelMap model) {
 
         // Url Helper
         model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
 
+        // Filling the data
         Blog blog = blogService.findBlogByID(blogID);
         model.addAttribute(TITLE.getAttributeName(), blog.getTitle());
         model.addAttribute(SUB_TITLE.getAttributeName(), blog.getSubTitle());
@@ -53,21 +55,22 @@ public class BlogEditController {
 
 
     @RequestMapping(value = RequestMappingDefinitions.BLOG_UPDATE_URL_PATH, method = {RequestMethod.POST})
-    public String saveOrupdateBlog(@ModelAttribute("SpringWeb") Blog blog,
+    public String saveOrUpdateBlog(@ModelAttribute("SpringWeb") Blog blog,
                              ModelMap model) {
 
         // Url Helper
         model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
 
-        // Updating Blog
+        // Set creation date to currentTime if it is creating the new blog.
         if (blog.getCreatedDate() == null) {
             blog.setCreatedDate(new Date());
         }
 
+        // Save or Update
         blogService.saveOrUpdate(blog);
 
         // Redirecting to list of Blog
-        return RequestMappingDefinitions.BLOG_FIND_URL_PATH;
+        return "redirect:" + RequestMappingDefinitions.BLOG_FIND_URL_PATH;
     }
 
     @RequestMapping(value = RequestMappingDefinitions.BLOG_DELETE_URL_PATH + "/{blogID}", method = {RequestMethod.GET})
@@ -93,59 +96,5 @@ public class BlogEditController {
         model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
         return RequestMappingDefinitions.BLOG_EDIT_URL_PATH;
     }
-
-    @RequestMapping(value = RequestMappingDefinitions.BLOG_SUBMIT_URL_PATH, method = {RequestMethod.POST})
-    public String createNewBlog(@ModelAttribute("SpringWeb") Blog blog,
-                                ModelMap model) {
-
-        model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
-//        return RequestMappingDefinitions.BLOG_EDIT_URL_PATH;
-//		blog.setBlogComponentList(blogBuilder.parseContent(blog.getContents()));
-//		model.addAttribute("blogComponents", blog.getBlogComponentList());
-//		System.out.println(blog.getBlogComponentList().size());
-//        System.out.println("Sample Function 1 Invoked");
-
-        // TODO Validate the form before saving!
-
-        // Save the blog information
-        blog.setCreatedDate(new Date());
-        blogService.saveBlog(blog);
-
-        // TODO Add successful message on top of "newBlogPage"
-
-//        List<Blog> list = blogService.findAllBlog();
-//        for (Blog tempBlog: list) {
-//            System.out.println(tempBlog.getTitle());
-//        }
-
-        return RequestMappingDefinitions.BLOG_EDIT_URL_PATH;
-    }
-
-//    public static void main(String[] args) {
-//        String input = "7 31 46 90";
-//        String[] numInputs = input.split(" ");
-//        List<Integer> numList = Arrays.asList(numInputs).stream().map(Integer::parseInt).collect(Collectors.toList());
-//        numList.sort(Collections.reverseOrder());
-//
-//        int count = helper(numList, 100, 0);
-//        System.out.println(count);
-//    }
-//
-//    private static int helper(List<Integer> numArray, int sum, int count) {
-//        if (sum == 0) {
-//            return count;
-//        } else if (sum < 0) {
-//            return -1;
-//        }
-//
-//
-//        for (int num: numArray) {
-//            int count2 = helper(numArray, sum-num, count + 1);
-//            if (count2 != -1) {
-//                return count2;
-//            }
-//        }
-//        return -1;
-//    }
 
 }

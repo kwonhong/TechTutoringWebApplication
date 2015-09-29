@@ -4,6 +4,12 @@
 <head>
     <%@ include file="/WEB-INF/views/jsp/include/headerInclude.jsp" %>
     <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+    <!-- DataTables Responsive CSS -->
+    <link href='<c:url value="/resources/bower_components/datatables-responsive/css/dataTables.responsive.css" />' rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href='<c:url value="/resources/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" />' rel="stylesheet">
 </head>
 
 <body>
@@ -56,12 +62,10 @@
                                         <td>${blog.createdDate.toString()}</td>
                                         <td>${blog.contents}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/editBlog/${blog.id}">
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                            </a>
-                                            <a href="${pageContext.request.contextPath}/deleteBlog/${blog.id}">
-                                                <button type="button" class="btn btn-danger">Delete<br/></button>
-                                            </a>
+                                            <a class="btn btn-xs btn-warning"
+                                               href="${pageContext.request.contextPath}/editBlog/${blog.id}">Edit </a>
+                                            <a class="btn btn-xs btn-danger"
+                                               href="${pageContext.request.contextPath}/deleteBlog/${blog.id}">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -78,6 +82,20 @@
 
     </div>
 </div>
+
+
+<!-- DataTables JavaScript -->
+<script src="<c:url value="/resources/bower_components/datatables/media/js/jquery.dataTables.min.js" />"></script>
+<script src="<c:url value="/resources/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" />"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
 
 </body>
 </html>

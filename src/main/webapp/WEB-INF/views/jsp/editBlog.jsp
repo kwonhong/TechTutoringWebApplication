@@ -2,7 +2,6 @@
 
 <html lang="en">
 <head>
-    <link href="<c:url value="/resources/core/css/sb-admin-2.css" />" rel="stylesheet">
     <script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 
@@ -66,11 +65,15 @@
             <div class="form-group">
                 <div class="button col-sm-2">
                     <button type="submit" class="button btn btn-default" onclick="form.action='${urlHelper.getUpdateBlogUrlPath()}'">Submit</button>
-                    <button type="submit" class="button btn btn-default" onclick="form.action='${urlHelper.getPreviewBlogUrlPath()}'">Preview</button>
+                    <button type="submit" class="button btn btn-default" onclick="form.action='/previewNewBlogPage'">Preview</button>
                 </div>
             </div>
 
-            <input name="id" type="input" hidden="hidden" value="${blogID}">
+            <%-- Blog Id that can be used to modified--%>
+            <c:if test="${not empty blogID}">
+                <input name="id" type="input" hidden="hidden" value="${blogID}">
+            </c:if>
+
         </form:form>
     </div>
 

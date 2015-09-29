@@ -14,19 +14,14 @@
     <%-- Dashboard Contents --%>
     <div id="page-wrapper">
 
-        <div class="container">
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        List of Blogs Created
-                    </h1>
-                </div>
+        <%-- Table Header Comes here--%>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">DashBoard</h1>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 </body>
 </html>
