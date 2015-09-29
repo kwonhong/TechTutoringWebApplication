@@ -1,17 +1,10 @@
-<%@ include file="/WEB-INF/views/jsp/include/headerInclude.jsp" %>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="<c:url value="/resources/core/css/sb-admin-2.css" />" rel="stylesheet">
-  <script type="text/javascript">SyntaxHighlighter.all();</script>
+  <%@ include file="/WEB-INF/views/jsp/include/headerInclude.jsp" %>
+  <%--<script type="text/javascript">SyntaxHighlighter.all();</script>--%>
 </head>
-
-<style>
-  .button {
-    float:right;
-    margin-left: 5px;
-  }
-</style>
 
 <body>
 <div id="wrapper">

@@ -34,17 +34,17 @@
 
                 <%-- Dashboard Button--%>
                 <li>
-                    <a href="<c:url value='${urlHelper.getDashBoardUrlPath()}' />"> DashBoard</a>
+                    <a href="<c:url value='${urlHelper.getDashBoardUrlPath()}' />"><i class="fa fa-dashboard fa-fw"></i>  DashBoard</a>
                 </li>
 
                 <li>
                     <a href="#"> Manage Blog </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<c:url value='${urlHelper.getCreateBlogUrlPath()}' />"> Create Blog</a>
+                            <a href="<c:url value='${urlHelper.getCreateBlogUrlPath()}' />"> <i class="fa fa-edit fa-fw"></i>Create Blog</a>
                         </li>
                         <li>
-                            <a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> Find Blog</a>
+                            <a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> <i class="fa fa-table fa-fw"></i>Find Blog</a>
                         </li>
                     </ul>
                 </li>
