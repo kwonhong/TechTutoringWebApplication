@@ -1,3 +1,5 @@
+<%--This Jsp Includes all the library & Plugins necessary--%>
+
 <%--Tag Library for jsp--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -21,6 +23,6 @@
 <script src="<c:url value="/resources/dist/js/sb-admin-2.js" />"></script>
 
 <%-- Syntax Highlighter plugins --%>
-<%--<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shCore.js"></script>--%>
-<%--<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shBrushJScript.js"></script>--%>
-<%--<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shBrushJava.js"></script>--%>
+<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../resources/core/syntax_highlighter/scripts/shBrushJava.js"></script>

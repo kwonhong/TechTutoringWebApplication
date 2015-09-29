@@ -32,6 +32,9 @@ public final class UrlHelper {
     public static String getUpdateBlogUrlPath() {
         return RequestMappingDefinitions.BLOG_UPDATE_URL_PATH;
     }
+    public static String getPreviewBlogUrlPath() {
+        return RequestMappingDefinitions.BLOG_PREVIEW_URL_PATH;
+    }
 
     public static String getFindBlogUrlPath() {
         return RequestMappingDefinitions.BLOG_FIND_URL_PATH;

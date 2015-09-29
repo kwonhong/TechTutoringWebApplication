@@ -10,10 +10,10 @@ public final class RequestMappingDefinitions {
     public static final String BLOG_FIND_URL_PATH = "/blogFind";
     public static final String BLOG_UPDATE_URL_PATH = "/updateBlog";
     public static final String BLOG_DELETE_URL_PATH = "/deleteBlog";
+    public static final String BLOG_SUBMIT_URL_PATH = "/blogSubmit";
+    public static final String BLOG_PREVIEW_URL_PATH = "/blogPreview";
 
     public static String getViewName(String pathName) {
         return pathName.replace(".jsp", "").replace(".html", "");
     }
-
-    public static final String BLOG_SUBMIT_URL_PATH = "/blogSubmit";
 }

@@ -33,15 +33,6 @@
                         Create New Tutorial
                         <small>Java</small>
                     </h1>
-
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i> <a href="index.html">First Option</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Second Option
-                        </li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -79,12 +70,11 @@
             <div class="form-group">
                 <div class="button col-sm-2">
                     <button type="submit" class="button btn btn-default" onclick="form.action='${urlHelper.getUpdateBlogUrlPath()}'">Submit</button>
-                    <button type="submit" class="button btn btn-default" onclick="form.action='/previewNewBlogPage'">Preview</button>
+                    <button type="submit" class="button btn btn-default" onclick="form.action='${urlHelper.getPreviewBlogUrlPath()}'">Preview</button>
                 </div>
             </div>
 
             <input name="id" type="input" hidden="hidden" value="${blogID}">
-
         </form:form>
     </div>
 
