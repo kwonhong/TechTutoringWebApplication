@@ -16,6 +16,7 @@
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<mysql.connector.version>5.1.31</mysql.connector.version>
 		<joda-time.version>2.3</joda-time.version>
+		<org.springframework.version>4.0.2.RELEASE</org.springframework.version>
 	</properties>
 
 	<dependencies>
@@ -36,6 +37,7 @@
 
 
 		<!-- Spring Core Libraries-->
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -134,6 +136,36 @@
 			<!--<version>${servletapi.version}</version>-->
 			<!--<scope>provided</scope>-->
 		<!--</dependency>-->
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${org.springframework.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${org.springframework.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${org.springframework.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${org.springframework.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 

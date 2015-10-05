@@ -1,4 +1,7 @@
 <%@ include file="/WEB-INF/views/jsp/include/headerInclude.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <html lang="en">
 <head>
@@ -22,7 +25,7 @@
             <h3 class="panel-title">Please Sign In</h3>
           </div>
           <div class="panel-body">
-            <form:form role="form" method ="POST">
+            <form:form role="form" action="/login" method="POST">
               <fieldset>
                 <div class="form-group">
                   <input class="form-control" placeholder="Username" name="username" type="text" required = "true" autofocus>
@@ -36,7 +39,7 @@
                   </label>
                 </div>
                 <!-- Change this to a button or input when using this as a form -->
-                <button  class="btn btn-lg btn-success btn-block" onclick="form.action= '/' "> Login </button>
+                <button  class="btn btn-lg btn-success btn-block"> Login </button>
               </fieldset>
             </form:form>
           </div>
@@ -47,5 +50,7 @@
 
 </div>
 
-</body>
-</html>
+
+
+
+

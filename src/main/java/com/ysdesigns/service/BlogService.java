@@ -18,4 +18,6 @@ public interface BlogService {
     Blog findBlogByID(int id);
 
     void updateBlog(Blog blog);
+
+    void saveOrUpdate(Blog blog);
 }

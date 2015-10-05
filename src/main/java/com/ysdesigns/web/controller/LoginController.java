@@ -14,6 +14,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -37,21 +43,20 @@ public class LoginController {
         return RequestMappingDefinitions.getViewName(RequestMappingDefinitions.LOGIN_URL_PATH);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String checkLOGIN
-            (@ModelAttribute("SpringWeb") Login login, String username, String password,
-             ModelMap model) {
-
-        if (loginService.checkLogin(login,username, password)) {
-            return "loginSuccess";
+    @RequestMapping(value = RequestMappingDefinitions.LOGOUT_URL_PATH, method = RequestMethod.GET)
+    public String logout(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        else
-            return "login";
+        model.addAttribute(UrlHelper.URL_HELPER_ATTRIBUTE_NAME, urlHelper);
+        return  "redirect:/login?logout";
+
     }
-
-
-
-
 }
+
+
+
+
 
 

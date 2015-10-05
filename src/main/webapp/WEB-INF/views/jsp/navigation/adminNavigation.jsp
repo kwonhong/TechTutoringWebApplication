@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+        <a class="navbar-brand" href="index.html">TechTutorial Admin</a>
     </div>
 
     <%-- Top Part Navigation--%>
@@ -25,27 +25,21 @@
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
+                            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
                         </span>
                     </div>
                 </li>
 
-                <%-- Dashboard Button--%>
-                <li>
-                    <a href="<c:url value='${urlHelper.getDashBoardUrlPath()}' />"> DashBoard</a>
-                </li>
+                <%-- DashBoard Part Navigation--%>
+                <li><a href="<c:url value='${urlHelper.getDashBoardUrlPath()}' />"><i class="fa fa-dashboard fa-fw"></i>
+                    DashBoard</a></li>
 
+                <%-- Manage Blog Part Navigation--%>
                 <li>
-                    <a href="#"> Manage Blog </a>
+                    <a href="#"> <i class="fa fa-wrench fa-fw"></i> Manage Blog </a>
                     <ul class="nav nav-second-level">
-                        <li>
-                            <a href="<c:url value='${urlHelper.getEditBlogUrlPath()}' />"> Create Blog</a>
-                        </li>
-                        <li>
-                            <a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> Find Blog</a>
-                        </li>
+                        <li><a href="<c:url value='${urlHelper.getCreateBlogUrlPath()}' />"> <i class="fa fa-edit fa-fw"></i>Create Blog</a></li>
+                        <li><a href="<c:url value='${urlHelper.getFindBlogUrlPath()}' />"> <i class="fa fa-table fa-fw"></i>Find Blog</a></li>
                     </ul>
                 </li>
 
@@ -56,5 +50,6 @@
             </ul>
         </div>
     </div>
+    <%--End Side Bar Navigation--%>
 
 </nav>

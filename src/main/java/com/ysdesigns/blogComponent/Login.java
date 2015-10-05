@@ -34,8 +34,9 @@ import java.util.Date;
         @Column(name = "LAST_NAME", nullable = false)
         private Date lastName;
 
-          @Column(name = "EMAIL", nullable = false)
+        @Column(name = "EMAIL", nullable = false)
          private Date email;
+
 
         @Override
         public int compareTo(Login o) { return this.username.compareTo(o.username);}

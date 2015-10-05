@@ -21,12 +21,35 @@ public final class UrlHelper {
         return RequestMappingDefinitions.BLOG_EDIT_URL_PATH;
     }
 
+    public static String getCreateBlogUrlPath() {
+        return RequestMappingDefinitions.BLOG_CREATE_URL_PATH;
+    }
+
+    public static String getCreateSubmitUrlPath() {
+        return RequestMappingDefinitions.BLOG_SUBMIT_URL_PATH;
+    }
+
+    public static String getUpdateBlogUrlPath() {
+        return RequestMappingDefinitions.BLOG_UPDATE_URL_PATH;
+    }
+    public static String getPreviewBlogUrlPath() {
+        return RequestMappingDefinitions.BLOG_PREVIEW_URL_PATH;
+    }
+
     public static String getFindBlogUrlPath() {
         return RequestMappingDefinitions.BLOG_FIND_URL_PATH;
     }
+    public static String getBlogDeleteUrlPath() {
+        return RequestMappingDefinitions.BLOG_DELETE_URL_PATH;
+    }
+
 
     public static String getLoginUrlPath() {
         return RequestMappingDefinitions.LOGIN_URL_PATH;
     }
+    public static String getLogoutUrlPath() {
+        return RequestMappingDefinitions.LOGOUT_URL_PATH;
+    }
+
 
 }
